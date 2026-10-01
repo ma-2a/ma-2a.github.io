@@ -1,79 +1,57 @@
 ---
-title: My smart home had exactly one user. Me.
-description: Why the smartest thing I added to my Home Assistant setup was an old smart display that anyone in the house can use without an app.
+title: My smart home had one user, and it was me
+description: How an old Echo Show 5, flashed and turned into a Home Assistant panel, became the part of my setup the rest of the household actually uses.
 category: smart-home-for-everyone
-tags: [home-assistant, view-assist, wall-panel, family-friendly]
+tags: [home-assistant, view-assist, echo-show, wall-panel]
 project: panelkit
 ---
 
-I had automated everything. Cameras with person detection. Multi-room audio. Lights, calendars, sensors, scripts. Months of work.
+My Home Assistant setup grew the way these things usually grow. A Reolink camera outside with person detection. Sonos speakers in several rooms, playing from Spotify. Calendars synced from iCloud. Lights. Automations I was quietly proud of.
 
-And the other adult in this house had not installed a single app for any of it.
+At some point I noticed that the other adult in this house used almost none of it. Most of the apps were never installed, and how the pieces fit together was a complete mystery to them. Which is fair. I never explained it, and honestly, I wouldn't know where to start.
 
-To be clear: that was not their failure. It was mine.
+Look at what I was implicitly asking for. One app for the camera, one for the speakers, one for the calendar, each with its own login and its own idea of where the buttons go. Then Home Assistant on top, the thing that supposedly ties it all together, as long as you know which dashboard to open. For me that's a hobby. For everyone else it's just complicated.
 
-## The part we don't talk about
+## What the rest of the house actually needs
 
-We build smart homes for ourselves. Five apps, three dashboards, one automation that only works if you know to flip the other switch first. We call it a hobby, so the complexity feels like a feature.
+When I wrote down what my toughest user wants from all that hardware, the list was short: see who's outside, put on music, check what's happening today, maybe switch a light.
 
-For everyone else in the house, that same complexity is a door that stays shut.
+None of that needs an app. It needs a screen that's already there, already on, in a spot everyone walks past.
 
-My toughest user doesn't want to know what an entity ID is. They want to know who's at the door, put music on in the kitchen, and see what's happening today. That's the entire feature request.
+## The device that was already accepted
 
-Every extra step between them and those three things is a step where the system fails.
+We already had an Echo Show 5 on the counter. Nobody had to be talked into using it. People read the time off it and tapped it without thinking. In a shared home, that kind of acceptance is harder to get than any feature.
 
-## A smart home isn't smart until everyone can use it
+So instead of adding another device, I changed what this one does. I flashed it with LineageOS, which replaces Amazon's software, and installed the companion app for [View Assist](https://github.com/dinki/View-Assist). Now it's a Home Assistant panel. Same device, same spot, a completely different screen.
 
-That's the whole idea behind what I'd call democratizing the smart home, and it has nothing to do with open standards or cheap hardware.
+## What's on it
 
-It's this: the complexity belongs to the person who enjoys it. Everyone else gets a surface they never have to think about.
+The default screen is a clock you can read from across the room, with the weather and the next appointments underneath. The background color shifts with the time of day. Most of the time that's all anyone needs from it, and nobody has to touch anything.
 
-If your household needs a tutorial, you didn't build a smart home. You built a hobby with a thermostat attached.
+When the Reolink detects a person, a banner appears on that clock screen. Tapping it opens the live stream, with a button for the floodlight next to it.
 
-## Why an old smart display turned out to be the answer
+A bar on the right holds five icons: home, camera, music, lights, calendar. The music page controls the Sonos speakers, one room or several, with large volume buttons and the next songs in the queue. The calendar page shows the week from the shared iCloud calendars.
 
-The solution was already sitting in millions of kitchens: a small smart display.
+After a short while without a touch, the panel goes back to the clock on its own.
 
-Think about why these things got adopted in the first place. They sit on a counter. They show the time. You glance at them. You tap them. Nobody needs onboarding for a clock.
+## Four rules I'd apply to any panel
 
-No app to install. No login to remember. No "where did you put the icon again?" It's furniture that happens to be useful.
+**The idle screen has to be worth a glance.** If the panel only becomes useful once you start tapping, it's just another app on a stand.
 
-Used ones go for very little, because plenty of people have one sitting in a drawer.
+**Everything sits one tap away from the clock.** Anything that needs a second level of navigation is something only I will use. That belongs in the regular Home Assistant dashboard, not on the panel.
 
-The twist: there's no voice assistant from the manufacturer on mine anymore. I flashed it with LineageOS and run it as a Home Assistant panel through [View Assist](https://github.com/dinki/View-Assist). Familiar hardware, my interface, everything local.
+**No settings, no entity names, no status pages.** When something breaks, I fix it from my laptop. The panel doesn't need to explain itself.
 
-## What it actually does now
+**It always returns home.** Whoever walks by next shouldn't find a music page someone left open an hour ago.
 
-At rest it shows a large clock, the weather, and the next few things on the calendar. Useful without being touched, which is most of the time.
+## What it costs
 
-When the outdoor camera detects a person, a small banner appears on that same screen. One tap opens the live view.
+Flashing only works on specific Echo Show models and firmware versions. It takes a few evenings, and if something goes wrong the device may not boot again. On top of that, View Assist and the custom cards I use mean a fair amount of YAML.
 
-Down the right edge there are five icons: home, camera, music, lights, calendar. Every function is exactly one tap away. After a while, everything returns to the clock by itself.
+All of that lands on one person, once. Everyone else gets a screen that just works. That's the trade I wanted.
 
-No menus. No settings. Nothing you can break by poking at it.
+## Next
 
-Here's how you know it worked: nobody talks about it. Nobody comments on a thing that just works. That silence is the whole point.
+The full setup goes in the next post: flashing, View Assist, every integration, every card, and the places I got stuck.
 
-## Four rules I'd keep for any panel
-
-**One device, one fixed place.** The value comes from never having to look for it.
-
-**The idle screen has to be useful on its own.** If you only get value by touching it, you've built an app, not a panel.
-
-**Nothing is more than one tap away.** The moment there's a second level of navigation, you've lost everyone but yourself.
-
-**Hide everything that isn't a daily need.** No configuration, no diagnostics, no entity names. The nerd surface lives somewhere else.
-
-## The honest part
-
-Flashing a smart display isn't for everyone. It only works on specific models and firmware versions, it takes a few evenings, and if it goes wrong you have an expensive paperweight. There's no gentle way to say that.
-
-But it's a one-time cost paid by one person. Everyone else just gets a screen that works, every day.
-
-That trade is the best one in my entire setup.
-
-## What's next
-
-I'm putting what I built into the open. [PanelKit](https://github.com/ma-2a/panelkit) is a visual editor for View Assist dashboards: pick your screen, lay out the grid, drop in your cards, copy the YAML. You can [try the builder here](https://ma-2a.github.io/panelkit/builder/).
-
-The full build, step by step, from flashing the device to the last bit of polish, is coming in the next post.
+In the meantime I've been turning the YAML part into something less painful. [PanelKit](https://github.com/ma-2a/panelkit) is a visual editor for View Assist dashboards: pick your screen, lay out the grid, drop in your cards, copy the result. You can [try the builder here](https://ma-2a.github.io/panelkit/builder/).
