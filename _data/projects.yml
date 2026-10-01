@@ -1,0 +1,21 @@
+- id: panelkit
+  name: PanelKit
+  summary: A visual layout editor for View Assist dashboards in Home Assistant. Pick your screen, lay out the grid, drop in the cards you use and copy the YAML.
+  url: https://github.com/ma-2a/panelkit
+  links:
+    - label: Open the builder
+      url: https://ma-2a.github.io/panelkit/builder/
+    - label: Source
+      url: https://github.com/ma-2a/panelkit
+  tags: [home-assistant, view-assist, dashboards]
+  status: Active
+
+- id: ss-recordings
+  name: Surveillance Station Recordings
+  summary: Brings Synology Surveillance Station recordings into Home Assistant, with a morning review card for everything recorded overnight.
+  url: https://github.com/ma-2a/ss-recordings
+  links:
+    - label: Source
+      url: https://github.com/ma-2a/ss-recordings
+  tags: [home-assistant, synology, integration]
+  status: Active

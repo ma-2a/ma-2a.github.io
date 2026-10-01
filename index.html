@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="eyebrow">{{ site.title }}</p>
+  <h1>{{ site.tagline }}</h1>
+  <p class="hero-sub">{{ site.description }}</p>
+  <p class="actions">
+    <a class="btn" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+    <a class="btn ghost" href="{{ '/projects/' | relative_url }}">See the projects</a>
+  </p>
+</section>
+
+<section class="section" aria-labelledby="latest">
+  <div class="section-head">
+    <h2 id="latest">Latest posts</h2>
+    {%- if site.posts.size > 0 %}
+    <a class="more" href="{{ '/blog/' | relative_url }}">All posts{% include icon.html name="arrow" %}</a>
+    {%- endif %}
+  </div>
+  {%- if site.posts.size > 0 %}
+  <div class="grid posts">
+    {%- for post in site.posts limit: 6 %}
+    {% include post-card.html post=post %}
+    {%- endfor %}
+  </div>
+  {%- else %}
+  <p class="empty card">The first write-up is on its way. Follow along via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
+  {%- endif %}
+</section>
+
+<section class="section" aria-labelledby="projects">
+  <div class="section-head">
+    <h2 id="projects">Projects</h2>
+    <a class="more" href="{{ '/projects/' | relative_url }}">All projects{% include icon.html name="arrow" %}</a>
+  </div>
+  <div class="grid projects">
+    {%- for project in site.data.projects %}
+    {% include project-card.html project=project %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="topics">
+  <div class="section-head"><h2 id="topics">Topics</h2></div>
+  <div class="grid topics">
+    {%- for c in site.data.categories %}
+    {%- assign n = site.posts | where: "category", c.id | size %}
+    <a class="card topic" href="{{ '/blog/' | relative_url }}?category={{ c.id }}">
+      <span class="topic-name">{{ c.name }}</span>
+      <span class="topic-blurb">{{ c.blurb }}</span>
+      <span class="topic-count">{{ n }} {% if n == 1 %}post{% else %}posts{% endif %}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>

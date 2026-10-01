@@ -1,0 +1,15 @@
+---
+layout: default
+title: Projects
+description: Open tools and builds for Home Assistant and the home around it.
+---
+<header class="page-head">
+  <h1>Projects</h1>
+  <p class="lead">{{ page.description }}</p>
+</header>
+
+<div class="grid projects wide">
+  {%- for project in site.data.projects %}
+  {% include project-card.html project=project full=true %}
+  {%- endfor %}
+</div>

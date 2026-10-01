@@ -1,0 +1,21 @@
+{%- assign pr = include.project -%}
+<article class="card project-card" id="{{ pr.id }}">
+  <div class="card-body">
+    <p class="meta"><span class="status">{{ pr.status }}</span></p>
+    <h3 class="card-title"><a class="stretch" href="{{ pr.url }}">{{ pr.name }}</a></h3>
+    <p class="card-text">{{ pr.summary }}</p>
+    {%- if pr.tags %}
+    <ul class="tags">{% for t in pr.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+    {%- endif %}
+    {%- if include.full and pr.links %}
+    <p class="card-links">{% for l in pr.links %}<a href="{{ l.url }}">{{ l.label }}{% include icon.html name="external" %}</a>{% endfor %}</p>
+    {%- assign related = site.posts | where: "project", pr.id %}
+    {%- if related.size > 0 %}
+    <div class="related">
+      <p class="related-head">Write-ups</p>
+      <ul>{% for r in related limit: 3 %}<li><a href="{{ r.url | relative_url }}">{{ r.title | escape }}</a></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+    {%- endif %}
+  </div>
+</article>

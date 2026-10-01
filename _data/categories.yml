@@ -1,0 +1,12 @@
+- id: home-assistant
+  name: Home Assistant
+  blurb: Panels, dashboards and integrations.
+- id: smart-home-for-everyone
+  name: Smart home for everyone
+  blurb: Setups the whole household can use, not only the person who built them.
+- id: 3d-printing
+  name: 3D printing
+  blurb: Printed parts, mounts and enclosures.
+- id: builds
+  name: Builds
+  blurb: Small hardware projects from start to finish.

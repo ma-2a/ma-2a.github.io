@@ -1,0 +1,13 @@
+{%- assign p = include.post -%}
+<article class="card post-card{% if p.image %} has-image{% endif %}" data-category="{{ p.category }}">
+  {%- if p.image %}
+  <div class="thumb"><img src="{{ p.image | relative_url }}" alt="" loading="lazy" decoding="async" width="800" height="450"></div>
+  {%- endif %}
+  <div class="card-body">
+    <p class="meta">{% include category-chip.html id=p.category %}<time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time><span class="dot-sep" aria-hidden="true"></span><span>{% include reading-time.html content=p.content %}</span></p>
+    <h3 class="card-title"><a class="stretch" href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></h3>
+    {%- if p.description %}
+    <p class="card-text">{{ p.description | escape }}</p>
+    {%- endif %}
+  </div>
+</article>

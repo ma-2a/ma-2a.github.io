@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign proj = site.data.projects | where: "id", page.project | first -%}
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-head">
+    <p class="meta">{% include category-chip.html id=page.category %}<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time><span class="dot-sep" aria-hidden="true"></span><span>{% include reading-time.html content=content %}</span></p>
+    <h1 class="post-title" itemprop="headline">{{ page.title | escape }}</h1>
+    {%- if page.description %}
+    <p class="lead" itemprop="description">{{ page.description | escape }}</p>
+    {%- endif %}
+    {%- if proj %}
+    <p class="post-project">Part of <a href="{{ '/projects/' | relative_url }}#{{ proj.id }}">{{ proj.name }}</a></p>
+    {%- endif %}
+  </header>
+
+  {%- if page.image %}
+  <figure class="cover"><img src="{{ page.image | relative_url }}" alt="" width="1200" height="675" itemprop="image"></figure>
+  {%- endif %}
+
+  <div class="prose" itemprop="articleBody">
+{{ content }}
+  </div>
+
+  {%- if page.tags.size > 0 %}
+  <ul class="tags post-tags">{% for t in page.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+  {%- endif %}
+
+  {% include kofi-line.html %}
+
+  {%- if page.previous or page.next %}
+  <nav class="post-nav" aria-label="More posts">
+    {%- if page.previous %}
+    <a class="card prev" href="{{ page.previous.url | relative_url }}"><span class="dir">{% include icon.html name="back" %}Older</span><span class="t">{{ page.previous.title | escape }}</span></a>
+    {%- else %}<span></span>{% endif %}
+    {%- if page.next %}
+    <a class="card next" href="{{ page.next.url | relative_url }}"><span class="dir">Newer{% include icon.html name="arrow" %}</span><span class="t">{{ page.next.title | escape }}</span></a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+</article>

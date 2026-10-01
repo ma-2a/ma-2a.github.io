@@ -1,0 +1,2 @@
+{%- assign cc = site.data.categories | where: "id", include.id | first -%}
+{%- if cc -%}<a class="chip" href="{{ '/blog/' | relative_url }}?category={{ cc.id }}">{{ cc.name }}</a>{%- endif -%}

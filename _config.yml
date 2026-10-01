@@ -1,0 +1,53 @@
+title: ma-2a
+tagline: Built at home, shared in the open.
+description: Home Assistant panels, 3D-printed parts, and small hardware builds, with the write-ups to go with them.
+url: https://ma-2a.github.io
+baseurl: ""
+lang: en
+locale: en_US
+timezone: UTC
+author: ma-2a
+
+permalink: /blog/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+social:
+  name: ma-2a
+  links:
+    - https://github.com/ma-2a
+    - https://ko-fi.com/ma2a
+
+links:
+  github: https://github.com/ma-2a
+  kofi: https://ko-fi.com/ma2a
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor

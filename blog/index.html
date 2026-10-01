@@ -1,0 +1,57 @@
+---
+layout: default
+title: Blog
+description: Write-ups on Home Assistant panels, 3D-printed parts and small hardware builds.
+---
+<header class="page-head">
+  <h1>Blog</h1>
+  <p class="lead">{{ page.description }}</p>
+</header>
+
+<nav class="filters" aria-label="Filter by topic">
+  <a class="filter" href="{{ '/blog/' | relative_url }}" data-filter="" aria-pressed="true">All <span class="n">{{ site.posts.size }}</span></a>
+  {%- for c in site.data.categories %}
+  {%- assign n = site.posts | where: "category", c.id | size %}
+  <a class="filter" href="{{ '/blog/' | relative_url }}?category={{ c.id }}" data-filter="{{ c.id }}" aria-pressed="false">{{ c.name }} <span class="n">{{ n }}</span></a>
+  {%- endfor %}
+</nav>
+
+{%- if site.posts.size > 0 %}
+<div class="grid posts" id="post-list">
+  {%- for post in site.posts %}
+  {% include post-card.html post=post %}
+  {%- endfor %}
+</div>
+{%- endif %}
+<p class="empty card" id="empty"{% if site.posts.size > 0 %} hidden{% endif %}>Nothing here yet. The first write-up is on its way, and the <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a> will have it.</p>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll("[data-filter]");
+  var cards = document.querySelectorAll("#post-list [data-category]");
+  var empty = document.getElementById("empty");
+  function apply(cat) {
+    var shown = 0;
+    cards.forEach(function (el) {
+      var on = !cat || el.getAttribute("data-category") === cat;
+      el.hidden = !on;
+      if (on) shown++;
+    });
+    chips.forEach(function (c) {
+      c.setAttribute("aria-pressed", String((c.getAttribute("data-filter") || "") === (cat || "")));
+    });
+    if (empty) empty.hidden = shown > 0;
+  }
+  chips.forEach(function (c) {
+    c.addEventListener("click", function (e) {
+      e.preventDefault();
+      var cat = c.getAttribute("data-filter");
+      var u = new URL(window.location.href);
+      if (cat) u.searchParams.set("category", cat); else u.searchParams.delete("category");
+      history.replaceState(null, "", u);
+      apply(cat);
+    });
+  });
+  apply(new URLSearchParams(window.location.search).get("category"));
+})();
+</script>

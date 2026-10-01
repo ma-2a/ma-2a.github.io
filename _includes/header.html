@@ -1,0 +1,16 @@
+{% assign url_parts = page.url | split: "/" %}{% assign section = url_parts[1] %}
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, home">
+      <img src="{{ '/assets/img/favicon.svg' | relative_url }}" alt="" width="26" height="26">
+      <span>{{ site.title }}</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ '/blog/' | relative_url }}"{% if section == "blog" %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if section == "projects" %} aria-current="page"{% endif %}>Projects</a>
+      <a class="icon-link" href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed" title="RSS feed">{% include icon.html name="rss" %}</a>
+      <a class="kofi" href="{{ site.links.kofi }}">Ko-fi</a>
+    </nav>
+  </div>
+</header>
