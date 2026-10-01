@@ -8,7 +8,9 @@ project: panelkit
 
 My Home Assistant setup grew the way these things usually grow. A Reolink camera outside with person detection. Sonos speakers in several rooms, playing from Spotify. Calendars synced from iCloud. Lights. Automations I was quietly proud of.
 
-At some point I noticed that the other adult in this house used almost none of it. Most of the apps were never installed, and how the pieces fit together was a complete mystery to them. Which is fair. I never explained it, and honestly, I wouldn't know where to start.
+At some point I noticed that the other adult in this house used almost none of it. Most of the apps were never installed, and how the pieces fit together was a complete mystery to them. What I got instead was the same question, again and again: can you dim the lights? In this room, in that room. I had turned into the remote control for my own smart home.
+
+Which is fair. I never explained any of it, and honestly, I wouldn't know where to start.
 
 Look at what I was implicitly asking for. One app for the camera, one for the speakers, one for the calendar, each with its own login and its own idea of where the buttons go. Then Home Assistant on top, the thing that supposedly ties it all together, as long as you know which dashboard to open. For me that's a hobby. For everyone else it's just complicated.
 
