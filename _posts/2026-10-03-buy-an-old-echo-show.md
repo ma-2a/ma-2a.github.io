@@ -14,13 +14,13 @@ If you run Home Assistant and want a panel somewhere in the house, I think an ol
 
 I didn't figure any of this out myself. The jailbreak comes from [Rortiz2](https://xdaforums.com/f/amazon-echo.6148/) on the XDA forums, who found a way to unlock the bootloader on several older Echo devices in late 2025. The LineageOS builds for them come from bengris32, also on XDA.
 
-What got me to actually try it was Dammit Jeff's video, where he unlocks a first-gen Echo Show 8, puts LineageOS on it and runs Home Assistant. [Hackaday wrote it up](https://hackaday.com/2026/01/02/jailbreaking-the-amazon-echo-show/) if you want the short version first. Seeing it working on real hardware was the moment it stopped sounding like a weekend I'd regret.
+Two videos got me to actually try it. Dammit Jeff's [Why you NEED to Jailbreak your Amazon Echo](https://www.youtube.com/watch?v=h0-MlJ38BXw), where he unlocks a first-gen Echo Show 8, puts LineageOS on it and runs Home Assistant. And Mark Watt Tech's [full walkthrough for the Echo Show 5](https://www.youtube.com/watch?v=5CCRIzcgKuM), which is the one I kept open next to me while doing it.
 
 ## Reason 1: they're cheap
 
 Echo Shows were sold in huge numbers, and plenty of them now sit in drawers. Some people upgraded, some got tired of Alexa, some got tired of the ads (more on that below). The result is that older models are all over eBay and the usual classifieds.
 
-I won't put a price in here because it moves too much. Search the sold listings for the exact model and generation and you'll see what they really go for.
+I paid €30 for my Echo Show 5 and €35 for the Echo Show 8, both secondhand from eBay and local classifieds. Prices move, so check the sold listings for the exact model and generation before you buy, but that's roughly the range to aim for.
 
 ## Reason 2: the hardware is made for this job
 
@@ -68,7 +68,7 @@ You can brick the device. The guides are explicit that interrupting certain step
 
 The LineageOS builds are unofficial, and early builds had known issues with things like audio, Bluetooth and sensors. Read the release notes in the ROM thread for your model before you decide what you want to use the device for.
 
-And it takes time. Plan an evening for the first device, not half an hour.
+And it takes time. The first device took me about an hour and a half, most of it reading and double-checking. The second one was done in just under 30 minutes.
 
 ## Guides and links
 
@@ -78,7 +78,12 @@ The XDA threads, one per model. These are the actual guides:
 - [Echo Show 5 2nd gen (cronos)](https://xdaforums.com/t/unlock-root-twrp-unbrick-amazon-echo-show-5-2nd-gen-2021-cronos.4772596/)
 - [Echo Show 8 1st gen (crown)](https://xdaforums.com/t/unlock-root-twrp-unbrick-amazon-echo-show-8-1st-gen-2019-crown.4766687/)
 
-The LineageOS ROM threads are linked from there, and the [Amazon Echo section on XDA](https://xdaforums.com/f/amazon-echo.6148/) has everything in one place.
+The LineageOS builds have their own threads, for example [LineageOS 18.1 for the Echo Show 5 1st gen](https://xdaforums.com/t/rom-unofficial-11-checkers-lineageos-18-1-for-the-amazon-echo-show-5-2019.4763475/). The [Amazon Echo section on XDA](https://xdaforums.com/f/amazon-echo.6148/) has all of them in one place.
+
+The videos that got me started:
+
+- [Why you NEED to Jailbreak your Amazon Echo](https://www.youtube.com/watch?v=h0-MlJ38BXw) by Dammit Jeff
+- [Echo Show 5 walkthrough](https://www.youtube.com/watch?v=5CCRIzcgKuM) by Mark Watt Tech
 
 Further reading:
 
