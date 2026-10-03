@@ -1,0 +1,89 @@
+---
+title: Buy an old Echo Show, then take Amazon off it
+description: Why a secondhand Echo Show 5 or first-gen Echo Show 8 is one of the best Home Assistant panels you can get right now, which models work, and where to start.
+category: home-assistant
+tags: [echo-show, lineageos, view-assist, home-assistant, jailbreak]
+project: panelkit
+---
+
+There are two Echo Shows in my house: an Echo Show 5 and a first-gen Echo Show 8. Neither runs Amazon's software anymore. Both are flashed with LineageOS and work as Home Assistant panels through [View Assist](https://github.com/dinki/View-Assist), the 8 with the View Assist Companion App (VACA).
+
+If you run Home Assistant and want a panel somewhere in the house, I think an old Echo Show is currently the best deal out there. This post covers why, which models you can actually use, and where to find the guides I followed.
+
+## Where this started
+
+I didn't figure any of this out myself. The jailbreak comes from [Rortiz2](https://xdaforums.com/f/amazon-echo.6148/) on the XDA forums, who found a way to unlock the bootloader on several older Echo devices in late 2025. The LineageOS builds for them come from bengris32, also on XDA.
+
+What got me to actually try it was Dammit Jeff's video, where he unlocks a first-gen Echo Show 8, puts LineageOS on it and runs Home Assistant. [Hackaday wrote it up](https://hackaday.com/2026/01/02/jailbreaking-the-amazon-echo-show/) if you want the short version first. Seeing it working on real hardware was the moment it stopped sounding like a weekend I'd regret.
+
+## Reason 1: they're cheap
+
+Echo Shows were sold in huge numbers, and plenty of them now sit in drawers. Some people upgraded, some got tired of Alexa, some got tired of the ads (more on that below). The result is that older models are all over eBay and the usual classifieds.
+
+I won't put a price in here because it moves too much. Search the sold listings for the exact model and generation and you'll see what they really go for.
+
+## Reason 2: the hardware is made for this job
+
+Strip away the software and an Echo Show is an Android device built to do exactly what a wall or counter panel needs to do. A touchscreen designed to be read from across a room and tapped in passing. Decent speakers and microphones. A stand that's part of the case. A power supply instead of a battery, so it can run all day, every day, without anything swelling or wearing out.
+
+Compare that with the usual alternative, an old tablet on a stand with a cable hanging out of it, and the Echo Show simply looks like it belongs in a home.
+
+It's not a powerful device, though. The first-gen Echo Show 8 has a MediaTek MT8163, 1 GB of RAM and 8 GB of storage. That's enough for a clean dashboard, a clock, controls and a camera stream. It's not enough for heavy visual effects or a dashboard with forty cards on it. Keep things simple and it runs fine.
+
+## Reason 3: getting away from the ads
+
+This is the one that annoys me most.
+
+Echo Shows show sponsored content on the home screen, and you can't switch it off. On Amazon's own forum, a staff member told a customer in 2024 that sponsored content cannot be removed from the Echo Show. In October 2025 it got noticeably worse: [owners reported full-screen ads](https://www.ghacks.net/2025/10/13/amazons-echo-show-devices-are-displaying-full-screen-ads/) between their photos and content cards, still with no opt-out. Amazon's position is that you can swipe past them or leave feedback.
+
+Unlike Kindles, there's no ad-free version you can pay extra for.
+
+My view on this is simple. I bought the device. It sits in my home, I pay for the electricity, and I want to decide what it shows. A screen in the middle of the house that runs ads I never agreed to is not something I'm willing to keep. Flashing it is the only way I've found to get that control back.
+
+## Which models work
+
+This is the most important part of the post, because only a few models can be unlocked:
+
+- **Echo Show 5, 1st gen (2019)**, codename *checkers*
+- **Echo Show 5, 2nd gen (2021)**, codename *cronos*
+- **Echo Show 8, 1st gen (2019)**, codename *crown*
+
+The **Echo Show 8 2nd gen does not work.** It uses a different chip that isn't vulnerable to the exploit. Anything newer, or anything not on this list, assume it won't work either.
+
+When buying secondhand, listings often don't mention the generation. One way to tell: the 2021 refresh came with better cameras, 2 MP on the Echo Show 5 2nd gen and 13 MP on the Echo Show 8 2nd gen. If a listing for an Echo Show 8 mentions 13 MP, that's the one you don't want. When in doubt, ask the seller for the model number or a photo of the label.
+
+## How the jailbreak works, roughly
+
+I'm not going to rewrite the guides here. They are maintained by the people who built this, and they get updated when something changes. But here's the shape of it, so you know what you're getting into:
+
+1. **Unlock the bootloader.** Rortiz2's tool for this is called amonet. You download the release for your exact model, put the device into a special boot mode, and run the script from a computer over USB. This step also installs TWRP, a custom recovery.
+2. **Flash LineageOS.** LineageOS 18.1 (Android 11) gets installed through TWRP. After this, nothing from Amazon is left on the device.
+3. **Set up View Assist.** Install the companion app on the Echo Show and the View Assist integration in Home Assistant. From then on, everything is configured from Home Assistant, not on the device.
+
+One detail from the unlock thread that's worth knowing: once the device is unlocked and TWRP is installed, Amazon can't undo it with an update, because TWRP protects the partitions the exploit depends on.
+
+## The risks
+
+You can brick the device. The guides are explicit that interrupting certain steps will permanently brick it, and they ask you to read the whole thing before you start. Do that. Twice.
+
+The LineageOS builds are unofficial, and early builds had known issues with things like audio, Bluetooth and sensors. Read the release notes in the ROM thread for your model before you decide what you want to use the device for.
+
+And it takes time. Plan an evening for the first device, not half an hour.
+
+## Guides and links
+
+The XDA threads, one per model. These are the actual guides:
+
+- [Echo Show 5 1st gen (checkers)](https://xdaforums.com/t/unlock-root-twrp-unbrick-amazon-echo-show-5-1st-gen-2019-checkers.4762900/)
+- [Echo Show 5 2nd gen (cronos)](https://xdaforums.com/t/unlock-root-twrp-unbrick-amazon-echo-show-5-2nd-gen-2021-cronos.4772596/)
+- [Echo Show 8 1st gen (crown)](https://xdaforums.com/t/unlock-root-twrp-unbrick-amazon-echo-show-8-1st-gen-2019-crown.4766687/)
+
+The LineageOS ROM threads are linked from there, and the [Amazon Echo section on XDA](https://xdaforums.com/f/amazon-echo.6148/) has everything in one place.
+
+Further reading:
+
+- [Hackaday on Dammit Jeff's Echo Show 8 build](https://hackaday.com/2026/01/02/jailbreaking-the-amazon-echo-show/)
+- [A detailed Echo Show 8 write-up with VACA and View Assist](https://localsmarthomeguide.com/articles/echo-show-8-lineageos-home-assistant-voice-satellite/) from Local Smart Home Guide
+- [View Assist on GitHub](https://github.com/dinki/View-Assist)
+
+If you want to know what the result looks like in daily use, I wrote about that in [Democratizing the smart home](/blog/democratizing-the-smart-home/). And if you'd rather click your View Assist dashboard together than write the YAML by hand, that's what [PanelKit](https://ma-2a.github.io/panelkit/builder/) is for.
