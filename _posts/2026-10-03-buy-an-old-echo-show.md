@@ -14,7 +14,7 @@ If you run Home Assistant and want a panel somewhere in the house, I think an ol
 
 I didn't figure any of this out myself. The jailbreak comes from [Rortiz2](https://xdaforums.com/f/amazon-echo.6148/) on the XDA forums, who found a way to unlock the bootloader on several older Echo devices in late 2025. The LineageOS builds for them come from bengris32, also on XDA.
 
-Two videos got me to actually try it. Dammit Jeff's [Why you NEED to Jailbreak your Amazon Echo](https://www.youtube.com/watch?v=h0-MlJ38BXw), where he unlocks a first-gen Echo Show 8, puts LineageOS on it and runs Home Assistant. And Mark Watt Tech's [full walkthrough for the Echo Show 5](https://www.youtube.com/watch?v=5CCRIzcgKuM), which is the one I kept open next to me while doing it.
+Two videos got me to actually try it. Dammit Jeff's [Why you NEED to Jailbreak your Amazon Echo](https://www.youtube.com/watch?v=h0-MlJ38BXw), where he unlocks a first-gen Echo Show 8, puts LineageOS on it and runs Home Assistant. And Mark Watt Tech's [full walkthrough for the Echo Show 5](https://www.youtube.com/watch?v=5CCRIzcgKuM).
 
 ## Reason 1: they're cheap
 
@@ -68,7 +68,7 @@ You can brick the device. The guides are explicit that interrupting certain step
 
 The LineageOS builds are unofficial, and early builds had known issues with things like audio, Bluetooth and sensors. Read the release notes in the ROM thread for your model before you decide what you want to use the device for.
 
-And it takes time. The first device took me about an hour and a half, most of it reading and double-checking. The second one was done in just under 30 minutes.
+And it takes time. The first device took me about an hour and a half. The second one was done in just under 30 minutes.
 
 ## Guides and links
 
