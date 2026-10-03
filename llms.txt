@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# ma-2a
+
+> {{ site.description }} Personal site of the maker ma-2a. Topics: Home Assistant, View Assist panels on jailbroken Echo Show devices, PanelKit, 3D printing, small hardware builds.
+
+## Posts
+{% for post in site.posts %}- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.description }}
+{% endfor %}
+## Projects
+- [PanelKit](https://github.com/ma-2a/panelkit): visual editor for View Assist dashboards in Home Assistant. Builder: https://ma-2a.github.io/panelkit/builder/

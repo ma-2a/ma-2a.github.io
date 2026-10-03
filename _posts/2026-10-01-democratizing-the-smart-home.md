@@ -1,8 +1,8 @@
 ---
-title: Democratizing the smart home
+title: "Democratizing the smart home: a Home Assistant panel everyone in the house can use"
 description: My smart home had one real user, and it was me. What it took to change that, and why an old Echo Show 5 turned into the most important part of the setup.
 category: smart-home-for-everyone
-tags: [home-assistant, view-assist, echo-show, wall-panel]
+tags: [democratizing-smart-home, home-assistant, view-assist, echo-show, wall-panel, family-friendly]
 project: panelkit
 ---
 
@@ -18,7 +18,7 @@ When people talk about democratizing the smart home, they usually mean cheaper d
 
 The bottleneck is everyone else who lives there. A smart home where one person holds all the knowledge isn't shared, it's run. Everybody else depends on that one person, and the dimming question is what that dependency sounds like day to day.
 
-So for me, democratizing the smart home means something narrower and more practical: everyone who lives in the house can use it, without help, without installing anything, and without understanding how it works underneath.
+So for me, **democratizing the smart home means that everyone who lives in the house can use it, without help, without installing anything, and without understanding how it works underneath.** It's narrower and more practical than the usual meaning, and it's the one that decided whether my setup was actually used.
 
 Looking at my own setup, that breaks down into three things it was failing at.
 
@@ -32,7 +32,7 @@ Looking at my own setup, that breaks down into three things it was failing at.
 
 What made the difference wasn't new hardware. We already had an Echo Show 5 on the counter, and nobody had to be talked into using it. People read the time off it and tapped it without thinking. In a shared home, that kind of acceptance is harder to get than any feature, and it covered access and legibility before I'd changed a single thing.
 
-So instead of adding another device, I changed what this one does. I flashed it with LineageOS, which replaces Amazon's software, and installed the companion app for [View Assist](https://github.com/dinki/View-Assist). Now it's a Home Assistant panel. Same device, same spot, a completely different screen.
+So instead of adding another device, I changed what this one does. I flashed it with LineageOS, which replaces Amazon's software, and installed the companion app for [View Assist](https://github.com/dinki/View-Assist). Which models can be flashed, what they cost and how the jailbreak works is in [a separate post](/blog/echo-show-jailbreak-home-assistant/). Now it's a Home Assistant panel. Same device, same spot, a completely different screen.
 
 ## What's on it
 
