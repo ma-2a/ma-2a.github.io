@@ -4,8 +4,6 @@ Source of [ma-2a.github.io](https://ma-2a.github.io): Home Assistant panels, 3D-
 
 Built with Jekyll on GitHub Pages, using only `jekyll-feed`, `jekyll-seo-tag` and `jekyll-sitemap`.
 
-The site and its texts are made with AI assistance.
-
 ## Writing a post
 
 Add a file to `_posts/` named `YYYY-MM-DD-slug.md`:
